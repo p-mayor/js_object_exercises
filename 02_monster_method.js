@@ -12,9 +12,22 @@
     //@see https://stackoverflow.com/questions/1335851/what-does-use-strict-do-in-javascript-and-what-is-the-reasoning-behind-it
     'use strict';
 
-    ///////////////////////////
-    // Put your code here!
-    ///////////////////////////
+    function Monster(name, health){
+        if (!(this instanceof Monster)) {
+            return new Monster(name, health);
+        }
+        this.name = name
+        this.health = health
+        this.isAlive = function(){
+            return this.health > 0
+        }
+    }
+
+    let rat = new Monster('Rat',5)
+    let goblin = new Monster('Goblin',30)
+    let ogre = new Monster('Ogre',80)
+
+    let monsters = [rat,goblin,ogre]
 
     
     //The code below should work when you are done
